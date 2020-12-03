@@ -24,10 +24,10 @@ jobs:
     - name: install
       run: npm install --frozen-lockfile
     - name: build
-        run: |
-          yarn build
-        env:
-          GITHUB_PAGES: true
+      run:
+        yarn build
+      env:
+        GITHUB_PAGES: true
     - name: export
       run: npm run export
     - name: add nojekyll
