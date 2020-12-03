@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>プラスチックフリーのお店地図 by Code for Mitaka / Musashino</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
