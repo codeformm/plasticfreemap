@@ -23,6 +23,7 @@
     "gridsome-plugin-pug": "0.0.3",
     "gridsome-plugin-purgecss": "^1.0.12",
     "pug": "^3.0.0",
+    "serve": "^11.3.2",
     "webpack-node-externals": "^2.5.2"
   }
 }
