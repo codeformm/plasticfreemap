@@ -8,7 +8,7 @@
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -121,6 +121,11 @@
     flex-direction: column;
   }
 }
+
+.subHeading {
+  text-align: center;
+}
+
 .fileterList {
   display: flex;
   align-items: center;
@@ -128,14 +133,15 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+  padding-left: 0;
   list-style-type: none;
 }
 .fileterList li {
   margin-left: 1rem;
 }
 .map {
-  width: 30rem;
-  height: 30rem;
+  width: 1504px;
+  height: 704px;
   margin: auto;
   border: 2px solid #999;
   text-align: center;

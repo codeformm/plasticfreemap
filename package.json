@@ -12,6 +12,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
     "gridsome-plugin-netlify-cms": "^1.0.9",
+    "mapbox-gl": "^1.13.0",
     "netlify-cms": "^2.10.71",
     "next": "10.0.3",
     "react": "17.0.1",

@@ -1,5 +1,11 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+
+const Map = dynamic(() => import('../components/map'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+});
 
 export default function Home() {
   return (
@@ -12,20 +18,20 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>
           プラスチックフリーのお店地図<br />
-          <a href="https://code4mm.org/" target="_blank">by Code for Mitaka / Musashino</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          以下の地図はOpenStreetMapを使用しています
         </p>
 
         <div className={styles.map}>
-          ここにマップUIを配置
+          <div id="app" >
+            <Map />
+          </div>
         </div>
 
         <form>
-          <h2>お店のカテゴリ絞り込みリスト</h2>
+          <h2 className={styles.subHeading}>お店のカテゴリ絞り込みリスト</h2>
           <ul className={styles.fileterList}>
             <li><button type="button" aria-label="">A</button></li>
             <li><button type="button" aria-label="">B</button></li>
@@ -46,13 +52,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Code for Mitaka / Musashino
-        </a>
+        <a href="https://code4mm.org/" target="_blank">Created by Code for Mitaka / Musashino</a>
       </footer>
     </div>
   )
