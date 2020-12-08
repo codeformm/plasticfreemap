@@ -17,11 +17,25 @@ class Map extends React.Component {
 
   componentDidMount() {
     this.map = new mapboxgl.Map(this.options);
+    // コントロール関係表示
+    this.map.addControl(new mapboxgl.NavigationControl, 'top-left');
+    //フルスクリーンモード
+    this.map.addControl(new mapboxgl.FullscreenControl);
+    //スケール表示
+    this.map.addControl(new mapboxgl.ScaleControl({
+      maxWidth: 80,
+      unit: 'metric'
+    }));
+    //位置情報取得
+    this.map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {enableHighAccuracy: true},
+      trackUserLocation: true
+    }));
   }
 
   render() {
     return(
-      <div id="map" style={{ height: 700, width: 1500 }}>
+      <div id="map" style={{height: 500}}>
         <div ref={el => this.mapContainer = el} />
       </div>
     )
