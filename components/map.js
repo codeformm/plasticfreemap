@@ -35,6 +35,25 @@ class Map extends React.Component {
     this.marker = new mapboxgl.Marker()
     .setLngLat(this.map.getCenter())
     .addTo(this.map);
+
+    this.markerHeight = 50;
+    this.markerRadius = 10;
+    this.linearOffset = 25;
+    this.popupOffsets = {
+      'top': [0, 0],
+      'top-left': [0,0],
+      'top-right': [0,0],
+      'bottom': [0, -(this.markerHeight)],
+      'bottom-left': [this.linearOffset, (this.markerHeight - this.markerRadius + this.linearOffset) * -1],
+      'bottom-right': [-(this.linearOffset), (this.markerHeight - this.markerRadius + this.linearOffset) * -1],
+      'left': [this.markerRadius, (this.markerHeight - this.markerRadius) * -1],
+      'right': [-(this.markerRadius), (this.markerHeight - this.markerRadius) * -1]
+    };
+    this.popup = new mapboxgl.Popup({offset: this.popupOffsets, className: 'my-class'})
+    .setLngLat(this.map.getCenter())
+    .setHTML("<p>三鷹・武蔵野の中心でプラスチックフリーを叫ぶ</p>")
+    .setMaxWidth("300px")
+    .addTo(this.map);
   }
 
   render() {
