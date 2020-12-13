@@ -13,6 +13,7 @@ export default function Home() {
       <Head>
         <title>プラスチックフリーのお店地図 by Code for Mitaka / Musashino</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href = 'https：//api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel = 'stylesheet' />
       </Head>
 
       <main className={styles.main}>
@@ -25,7 +26,7 @@ export default function Home() {
         </p>
 
         <div className={styles.map}>
-          <div id="app" >
+          <div id="app">
             <Map />
           </div>
         </div>

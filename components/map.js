@@ -31,6 +31,10 @@ class Map extends React.Component {
       positionOptions: {enableHighAccuracy: true},
       trackUserLocation: true
     }));
+
+    this.marker = new mapboxgl.Marker()
+    .setLngLat(this.map.getCenter())
+    .addTo(this.map);
   }
 
   render() {
