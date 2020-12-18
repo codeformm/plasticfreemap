@@ -1,12 +1,13 @@
 import React from 'react';
 import mapboxgl from 'mapbox-gl';
+import MapboxLanguage from '@mapbox/mapbox-gl-language';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaXNoaW1hc2FyIiwiYSI6ImNraWVqazNhZDE3NDEyc211bmVnNHp4Y2YifQ.UakMRuSG9yy-JtOMDEpULQ';
 
 class Map extends React.Component {
   options = {
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
+    style: 'mapbox://styles/mapbox/streets-v10',
     center: [139.576034, 35.700108],
     zoom: 13
   };
@@ -31,6 +32,8 @@ class Map extends React.Component {
       positionOptions: {enableHighAccuracy: true},
       trackUserLocation: true
     }));
+    //言語を日本語に変更
+    this.map.addControl(new MapboxLanguage({defaultLanguage: 'ja'}));
 
     this.marker = new mapboxgl.Marker()
     .setLngLat(this.map.getCenter())
