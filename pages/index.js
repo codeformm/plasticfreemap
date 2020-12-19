@@ -48,7 +48,7 @@ export default function Home() {
               <button type="button" aria-label="">検索アイコン</button>
             </label>
 
-            <button className={styles.postButton} type="button" aria-label="">お店情報を投稿する</button>
+            <a href="https://docs.google.com/forms/d/1oyeYAEIhlxdrh5OeYLJCDhIObFqoafI84Nw4Pib5rOA/prefill" className={styles.postButton} aria-label="" target="_blank">お店情報を投稿する(Googleフォームへ遷移します)</a>
           </div>
         </form>
       </main>
