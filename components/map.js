@@ -58,7 +58,6 @@ class Map extends React.Component {
     .setMaxWidth("300px")
     .addTo(this.map);
   }
-
   render() {
     return(
       <div id="map" style={{height: 500}}>
