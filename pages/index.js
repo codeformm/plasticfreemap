@@ -14,7 +14,7 @@ export default function Home() {
       <Head>
         <title>プラスチックフリーのお店地図 by Code for Mitaka / Musashino</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href = 'https：//api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel = 'stylesheet' />
+        <link href = 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel = 'stylesheet' />
       </Head>
 
       <main className={styles.main}>
@@ -48,7 +48,7 @@ export default function Home() {
               <button type="button" aria-label="">検索アイコン</button>
             </label>
 
-            <a href="https://docs.google.com/forms/d/1oyeYAEIhlxdrh5OeYLJCDhIObFqoafI84Nw4Pib5rOA/prefill" className={styles.postButton} aria-label="" target="_blank">お店情報を投稿する(Googleフォームへ遷移します)</a>
+            <a className={styles.postButton} aria-label="" href="https://docs.google.com/forms/d/1oyeYAEIhlxdrh5OeYLJCDhIObFqoafI84Nw4Pib5rOA/prefill" target="_blank">お店情報を投稿する(Googleフォームへ遷移します)</a>
           </div>
         </form>
       </main>
