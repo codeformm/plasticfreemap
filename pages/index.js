@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import fetch from 'isomorphic-unfetch'
 
 const Map = dynamic(() => import('../components/map'), {
   loading: () => <p>Loading...</p>,
@@ -14,7 +13,7 @@ export default function Home() {
       <Head>
         <title>プラスチックフリーのお店地図 by Code for Mitaka / Musashino</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href = 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel = 'stylesheet' />
+        <link href = 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
       </Head>
 
       <main className={styles.main}>
@@ -60,7 +59,7 @@ export default function Home() {
   )
 }
 
-Home.getInitialProps = async () => {
+Home.getInitialProps = async function() {
   const res = await fetch('https://script.googleusercontent.com/macros/echo?user_content_key=_e_1hfQUyLZPD2qTB71xlB9BJDs2tnki_lL-qBfFmQJkeTXUK9ZqtxDnjYqq9CdgN0DEdcb6wSZVHn4in9G3alRfL4BmDDmCm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPwdB6HTl5j1Z2awz-m4v7Ttt3zAuIYkEU2MMY_-rGiwb1en4mKCe7i-Ao5iwXIg1Tz1D_WcjPtk&lib=MZ9a4vnBEBaVJYBF6GuykIGCz59zrVi-4');
 
   const data = await res.json();
@@ -68,5 +67,4 @@ Home.getInitialProps = async () => {
   return {
     bpi: data
   }
-
 }
