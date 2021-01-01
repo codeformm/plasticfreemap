@@ -7,6 +7,16 @@ const Map = dynamic(() => import('../components/map'), {
   ssr: false
 });
 
+Home.getInitialProps = async (ctx) => {
+  const res = await fetch('https://script.googleusercontent.com/macros/echo?user_content_key=_e_1hfQUyLZPD2qTB71xlB9BJDs2tnki_lL-qBfFmQJkeTXUK9ZqtxDnjYqq9CdgN0DEdcb6wSZVHn4in9G3alRfL4BmDDmCm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPwdB6HTl5j1Z2awz-m4v7Ttt3zAuIYkEU2MMY_-rGiwb1en4mKCe7i-Ao5iwXIg1Tz1D_WcjPtk&lib=MZ9a4vnBEBaVJYBF6GuykIGCz59zrVi-4');
+
+  const data = await res.json();
+
+  return {
+    bpi: data
+  }
+}
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -57,14 +67,4 @@ export default function Home() {
       </footer>
     </div>
   )
-}
-
-Home.getInitialProps = async function() {
-  const res = await fetch('https://script.googleusercontent.com/macros/echo?user_content_key=_e_1hfQUyLZPD2qTB71xlB9BJDs2tnki_lL-qBfFmQJkeTXUK9ZqtxDnjYqq9CdgN0DEdcb6wSZVHn4in9G3alRfL4BmDDmCm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPwdB6HTl5j1Z2awz-m4v7Ttt3zAuIYkEU2MMY_-rGiwb1en4mKCe7i-Ao5iwXIg1Tz1D_WcjPtk&lib=MZ9a4vnBEBaVJYBF6GuykIGCz59zrVi-4');
-
-  const data = await res.json();
-
-  return {
-    bpi: data
-  }
 }
